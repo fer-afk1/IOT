@@ -1,12 +1,12 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid     = "TU_SSID";
-const char* password = "TU_PASSWORD";
+const char* ssid     = "AndroidAP7495";
+const char* password = "7070buho";
 const char* broker   = "broker.hivemq.com";
 const char* topico   = "lis428/led";
 
-const int LED = 5;
+const int LED = 2;
 
 WiFiClient wifi;
 PubSubClient mqtt(wifi);
