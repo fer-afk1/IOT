@@ -2,8 +2,8 @@
 #include <PubSubClient.h>
 #include <DHT.h>
 
-const char* ssid     = "TU_SSID";
-const char* password = "TU_PASSWORD";
+const char* ssid     = "AndroidAP7495";
+const char* password = "7070buho";
 const char* broker   = "broker.hivemq.com";
 const char* topico   = "lis428/temperatura";
 
