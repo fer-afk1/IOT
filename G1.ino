@@ -2,20 +2,31 @@
 
 void setup() {
   Serial.begin(115200);
-  Wire.begin();
-  delay(1000);
+  delay(2000); // le das tiempo al Serial de inicializarse
 
-  Serial.println("Buscando dispositivos en el bus I2C...");
+  Wire.begin(21, 22); // SDA=21, SCL=22 (pines por defecto del ESP32)
 
-  for (byte dir = 1; dir < 127; dir++) {
-    Wire.beginTransmission(dir);
+  Serial.println("Escaneando bus I2C...");
+
+  int encontrados = 0;
+
+  for (byte addr = 1; addr < 127; addr++) {
+    Wire.beginTransmission(addr);
     if (Wire.endTransmission() == 0) {
-      Serial.print("Dispositivo en: 0x");
-      Serial.println(dir, HEX);
+      Serial.print("Dispositivo encontrado en 0x");
+      Serial.println(addr, HEX);
+      encontrados++;
     }
   }
 
-  Serial.println("Listo");
+  if (encontrados == 0) {
+    Serial.println("No se encontraron dispositivos.");
+  } else {
+    Serial.print(encontrados);
+    Serial.println(" dispositivo(s) encontrado(s).");
+  }
+
+  Serial.println("Escaneo completo.");
 }
 
 void loop() {}
