@@ -12,7 +12,7 @@ void loop() {
   float hum  = sensor.readHumidity();
 
   if (isnan(temp) || isnan(hum)) {
-    Serial.println("No se pudo leer el sensor.");
+    Serial.println("No se pudo leer el sensor");
     delay(2000);
     return;
   }
