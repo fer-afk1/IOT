@@ -1,7 +1,7 @@
 #include <WiFi.h>
 
-const char* ssid     = "TU_SSID";
-const char* password = "TU_PASSWORD";
+const char* ssid     = "AndroidAP7495";
+const char* password = "7070buho";
 
 void setup() {
   Serial.begin(115200);
